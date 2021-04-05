@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row input">
+        <div class="col">
+            <button type="button" class="btn btn-primary btn-block"
+                    (click)="combat.NextPhase()">
+                Next phase
+            </button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-secondary btn-block"
+            (click)="combat.Reset()">
+                Reset
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <h1>Phase {{ combat.ActivePhase }}</h1>
+        </div>
+    </div>
+    <div class="row" *ngFor="let c of combat.activeCombatants">
+        <div class="col-sm-6" style="padding-top: 5px;">
+            {{ c.Name }}
+        </div>
+        <div class="col-sm-2 text-center" style="padding-top: 5px;"
+             placement="top" ngbTooltip="{{ c.phases }}">
+            {{ c.Speed }} 
+        </div>
+        <div class="col-sm-2 text-center" style="padding-top: 5px;">
+            {{ c.Dex }} 
+        </div>
+        <div class="col-sm-1 text-center" style="padding-top: 5px;">
+            {{ c.Ego }} 
+        </div>
+    </div>
+</div>
